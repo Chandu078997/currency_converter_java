@@ -44,7 +44,7 @@ public class CurrencyConverterServlet extends HttpServlet {
         double rateTo = rates.getOrDefault(to, 1.0);
         double result = (amount / rateFrom) * rateTo;
 
-        // Store result in DB
+      /*  // Store result in DB
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(
@@ -67,7 +67,7 @@ public class CurrencyConverterServlet extends HttpServlet {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
 
         request.setAttribute("result", String.format("%.2f", result));
         request.setAttribute("toCurrency", to);
